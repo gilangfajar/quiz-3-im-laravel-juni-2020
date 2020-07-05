@@ -14,6 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/', function () {
+    return view('layouts.images');
+});
+Route::get('/artikel', 'ArtikelController@index');
+Route::get('/artikel/create', 'ArtikelController@create');
+Route::post('/artikel', 'ArtikelController@store');
+Route::get('/artikel/{id}', 'ArtikelController@show');
 
 Route::get('/items/create', 'ItemController@create'); // menampilkan halaman form
 Route::post('/items', 'ItemController@store'); // menyimpan data
